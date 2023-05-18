@@ -3,6 +3,7 @@ import { LottieLazyLoad } from "../../component/lottie-lazyload/LottieLazyLoad";
 import { varFade } from "../../component/animate/variants";
 import { m } from "framer-motion";
 import MotionViewport from "../../component/animate/MotionViewport";
+import { MapComponents } from "../../component/maps/map";
 
 type contactType = {
   title: string;
@@ -32,10 +33,13 @@ export const Contact = () => {
   };
 
   return (
-    <Stack id="Cont" component={MotionViewport} spacing={8}>
+    <Stack id="Cont" component={MotionViewport} spacing={8} sx={{ position: "relative" }}>
       <m.div variants={varFade().inDown}>
         <Typography sx={{ fontSize: "50px", textAlign: "center" }}>Get in Touch</Typography>
       </m.div>
+      <Stack justifyContent={"center"} alignItems={"center"}>
+        <MapComponents />
+      </Stack>
       <m.div variants={varFade().inUp}>
         <Paper sx={{ mb: 10 }}>
           <Grid container>

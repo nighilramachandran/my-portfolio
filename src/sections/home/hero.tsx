@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
       _scroll = false;
     }
 
-    if (_scroll == true) {
+    if (_scroll === true) {
       animate(
         scope.current,
         { opacity: 0, y: -100 },
@@ -36,7 +36,7 @@ export const Hero: React.FC = () => {
       );
     }
 
-    if (_scroll == false) {
+    if (_scroll === false) {
       animate(
         scope.current,
         { opacity: 1, y: 0 },
