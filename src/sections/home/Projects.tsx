@@ -1,4 +1,4 @@
-import { Box, Grid, Paper, Stack, Typography } from "@mui/material";
+import { Box, Button, Grid, Paper, Stack, Typography } from "@mui/material";
 import { varFade } from "../../component/animate/variants";
 import { m } from "framer-motion";
 import MotionViewport from "../../component/animate/MotionViewport";
@@ -14,6 +14,11 @@ const ProjectsData: ProjectProbs = [
     name: "Golex.io",
     img: "golex.webp",
     desc: "Golex.io provides secure, trusted digital asset trading and asset management services, the highest quality investment opportunities, and the most rewarding trading experience.",
+  },
+  {
+    name: "GolCoin Stacking",
+    img: "golstacking.png",
+    desc: "GolCoin Stacking is a platform for cryptocurrency stacking. GolCoin Stacking empowers individuals to participate in the staking economy and earn passive income from their digital assets. ",
   },
   {
     name: "Golc LandingPage",
@@ -65,30 +70,39 @@ export const Projects = () => {
             justifyContent={"center"}
             mb={5}
           >
-            <m.div variants={varFade().inUp}>
+            <m.div
+              variants={varFade().inUp}
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
+            >
               <Paper sx={{ maxWidth: "350px", width: "100%", height: "450px" }}>
-                <Stack spacing={2}>
-                  <Box
-                    sx={{
-                      width: "100%",
-                      height: "200px",
-                      background: "#FFF",
-                      borderRadius: "16px",
-                      overflow: "hidden",
-                    }}
-                  >
-                    <img
-                      width={"100%"}
-                      height={"100%"}
-                      style={{ objectFit: "cover" }}
-                      src={`/assets/images/projects/${el.img}`}
-                      alt=""
-                    />
-                  </Box>
-                  <Typography variant="h1" sx={{ fontSize: "20px" }}>
-                    {el.name}
-                  </Typography>
-                  <Typography sx={{ fontSize: "15px" }}>{el.desc}</Typography>
+                <Stack justifyContent={"space-between"} height={"100%"}>
+                  <Stack spacing={2}>
+                    <Box
+                      sx={{
+                        width: "100%",
+                        height: "200px",
+                        background: "#FFF",
+                        borderRadius: "16px",
+                        overflow: "hidden",
+                      }}
+                    >
+                      <img
+                        width={"100%"}
+                        height={"100%"}
+                        style={{ objectFit: "cover" }}
+                        src={`/assets/images/projects/${el.img}`}
+                        alt=""
+                      />
+                    </Box>
+                    <Typography variant="h1" sx={{ fontSize: "20px" }}>
+                      {el.name}
+                    </Typography>
+                    <Typography sx={{ fontSize: "15px" }}>{el.desc}</Typography>
+                  </Stack>
+                  <Button variant="contained" sx={{ color: "text.primary" }}>
+                    Live
+                  </Button>
                 </Stack>
               </Paper>
             </m.div>
