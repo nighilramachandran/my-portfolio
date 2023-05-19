@@ -13,14 +13,15 @@ export const MapComponents = () => {
 
   const StyledPaper = styled(Paper)(({ theme }: any) => ({
     width: "100%",
-    maxWidth: "600px",
+    // maxWidth: "600px",
     height: "400px",
   }));
 
   const StyledBoxInner = styled(Box)(({ theme }: any) => ({
     width: "100%",
-    height: "100%",
-    borderRadius: 10,
+    // height: "100%",
+    height: "400px",
+    // borderRadius: 10,
     overflow: "hidden",
   }));
 
@@ -42,19 +43,21 @@ export const MapComponents = () => {
   };
   return (
     <>
-      <StyledPaper>
-        <StyledBoxInner>
-          <GoogleMapReact
-            bootstrapURLKeys={{ key: "AIzaSyAD6Ro5trYroHIf57V1SxE9-TMIC2AwwSw" }}
-            defaultCenter={defaultProps.center}
-            defaultZoom={defaultProps.zoom}
-            onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}
-          >
-            {/* <AnyReactComponent lat={59.955413} lng={30.337844} text="My Marker" /> */}
-            <Marker />
-          </GoogleMapReact>
-        </StyledBoxInner>
-      </StyledPaper>
+      {/* <StyledPaper> */}
+      <StyledBoxInner>
+        <GoogleMapReact
+          bootstrapURLKeys={{
+            key: "AIzaSyAD6Ro5trYroHIf57V1SxE9-TMIC2AwwSw",
+          }}
+          defaultCenter={defaultProps.center}
+          defaultZoom={defaultProps.zoom}
+          onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}
+        >
+          {/* <AnyReactComponent lat={59.955413} lng={30.337844} text="My Marker" /> */}
+          <Marker />
+        </GoogleMapReact>
+      </StyledBoxInner>
+      {/* </StyledPaper> */}
     </>
   );
 };

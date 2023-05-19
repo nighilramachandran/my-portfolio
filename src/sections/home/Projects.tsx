@@ -31,6 +31,7 @@ const ProjectsData: ProjectProbs = [
     desc: "Platform that connects people by video and audio and also where you can schedule meetings etc...",
   },
   { name: "Metagols", img: "metagols.png", desc: "" },
+  { name: "Gdex", img: "gdex.png", desc: "" },
 ];
 
 export const Projects = () => {
@@ -38,16 +39,32 @@ export const Projects = () => {
     <Stack id="Proj" component={MotionViewport}>
       <Stack textAlign="center" spacing={2} mb={5}>
         <m.div variants={varFade().inDown}>
-          <Typography sx={{ fontSize: "25px", letterSpacing: "10px" }}>Selection of my work</Typography>
+          <Typography sx={{ fontSize: "25px", letterSpacing: "10px" }}>
+            Selection of my work
+          </Typography>
         </m.div>
         <m.div variants={varFade().inUp}>
           <Typography sx={{ fontSize: "50px" }}>Projects</Typography>
         </m.div>
       </Stack>
 
-      <Grid container spacing={3} justifyContent={"center"} alignItems={"center"} sx={{ mb: 5 }}>
+      <Grid
+        container
+        spacing={3}
+        justifyContent={"center"}
+        alignItems={"center"}
+        sx={{ mb: 5 }}
+      >
         {ProjectsData.map((el, ind) => (
-          <Grid key={ind} item lg={4} display={"flex"} alignItems={"center"} justifyContent={"center"} mb={5}>
+          <Grid
+            key={ind}
+            item
+            lg={4}
+            display={"flex"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            mb={5}
+          >
             <m.div variants={varFade().inUp}>
               <Paper sx={{ maxWidth: "350px", width: "100%", height: "450px" }}>
                 <Stack spacing={2}>

@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material";
+import { Container, Stack } from "@mui/material";
 import { Hero } from "../sections/home/hero";
 import { Intro } from "../sections/home/Introduction";
 import { Experience } from "../sections/home/experiences";
@@ -10,22 +10,16 @@ import { Contact } from "../sections/home/contact";
 export const Home: React.FC = () => {
   return (
     <Stack gap={15}>
-      <Hero />
-
-      {/* No problem in Intro */}
-      <Intro />
-      {/* <Experience /> */}
-
-      {/* No problem in awards */}
-      <Awards />
-
-      {/* No problem in Projects */}
-      <Projects />
-
-      {/* No problem in TechnicalSkills */}
-      <TechnicalSkills />
-
-      {/* No problem in Contact */}
+      <Container maxWidth={"xl"}>
+        <Stack gap={15}>
+          <Hero />
+          <Intro />
+          <Experience />
+          <Awards />
+          <Projects />
+          <TechnicalSkills />
+        </Stack>
+      </Container>
       <Contact />
     </Stack>
   );
