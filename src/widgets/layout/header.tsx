@@ -1,4 +1,4 @@
-import { AppBar, Box, Button, Toolbar, useTheme } from "@mui/material";
+import { AppBar, Box, Button, Stack, Toolbar, useTheme } from "@mui/material";
 import { NavDestop } from "./main/nav/desktop/NavDestop";
 import navConfig from "./main/nav/config";
 import useOffSetTop from "../../hooks/useOffSetTop";
@@ -6,9 +6,17 @@ import { bgBlur } from "../../utils/cssStyles";
 import { HEADER } from "../../utils/config";
 import useResponsive from "../../hooks/useResponsive";
 import styled from "@emotion/styled";
+import MenuIcon from "@mui/icons-material/Menu";
+import { m } from "framer-motion";
 
 import MotionViewport from "../../component/animate/MotionViewport";
-import { animateScroll, scroller } from "react-scroll";
+import { scroller } from "react-scroll";
+import Drawer, { drawerClasses } from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+
+import "../../index.css";
+import { useState } from "react";
+import { NavItemProps, NavProps } from "./main/nav/types";
 
 const StyledAvatar = styled(Box)(({ theme }: any) => ({
   width: "80px",
@@ -34,13 +42,18 @@ const StyledAvatarInner = styled(Box)(({ theme }: any) => ({
 }));
 
 export const Header: React.FC = () => {
+  const [openDrawer, setOpenDrawer] = useState<boolean>(false);
   const isOffset = useOffSetTop(HEADER.H_MAIN_DESKTOP);
 
   const theme = useTheme();
 
   const isDesktop = useResponsive("up", "md");
 
+  //functions
   const ScrollFunction = (val: string) => {
+    {
+      !isDesktop && setOpenDrawer(false);
+    }
     scroller.scrollTo(val, {
       duration: 800,
       delay: 0,
@@ -49,9 +62,17 @@ export const Header: React.FC = () => {
     });
   };
 
+  const toggleDrawer = () => {
+    setOpenDrawer(!openDrawer);
+  };
+
   return (
-    <AppBar component={MotionViewport} sx={{ position: "sticky", bgcolor: "background.header", borderRadius: 0 }}>
+    <AppBar
+      component={MotionViewport}
+      sx={{ position: "sticky", bgcolor: "background.header", borderRadius: 0 }}
+    >
       <Toolbar
+        disableGutters
         sx={{
           height: {
             xs: HEADER.H_MOBILE,
@@ -69,16 +90,36 @@ export const Header: React.FC = () => {
           }),
         }}
       >
-        <StyledAvatar>
-          <StyledAvatarInner>
-            <img
-              style={{ width: "100%", height: "100%", objectFit: "contain", position: "absolute", top: "7px" }}
-              src="/assets/images/me.JPG"
-              alt="Nighil Logo"
-            />
-          </StyledAvatarInner>
-        </StyledAvatar>
-        {isDesktop && <NavDestop Scroll={(val: string) => ScrollFunction(val)} data={navConfig} />}
+        {isDesktop && (
+          <StyledAvatar>
+            <StyledAvatarInner>
+              <img
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                  position: "absolute",
+                  top: "7px",
+                }}
+                src="/assets/images/me.JPG"
+                alt="Nighil Logo"
+              />
+            </StyledAvatarInner>
+          </StyledAvatar>
+        )}
+        {isDesktop && (
+          <NavDestop
+            Scroll={(val: string) => ScrollFunction(val)}
+            data={navConfig}
+            desktop={isDesktop}
+          />
+        )}
+        {!isDesktop && (
+          <IconButton onClick={toggleDrawer}>
+            <MenuIcon sx={{ color: "text.primary" }} />
+          </IconButton>
+        )}
+
         <Box sx={{ marginLeft: "auto" }}>
           <Button
             sx={{
@@ -92,7 +133,48 @@ export const Header: React.FC = () => {
             Download CV
           </Button>
         </Box>
+
+        <Drawer
+          anchor={"left"}
+          open={openDrawer}
+          onClose={toggleDrawer}
+          sx={{ [`.${drawerClasses.paper}`]: { borderRadius: 0 } }}
+        >
+          <DrawerContent
+            Scroll={(val: string) => ScrollFunction(val)}
+            data={navConfig}
+            desktop={isDesktop}
+          />
+        </Drawer>
       </Toolbar>
     </AppBar>
+  );
+};
+
+const DrawerContent: React.FC<NavProps> = ({ data, Scroll, desktop }) => {
+  return (
+    <Stack
+      sx={{ width: 200, my: 1 }}
+      justifyContent={"center"}
+      alignItems={"center"}
+      spacing={3}
+    >
+      <StyledAvatar>
+        <StyledAvatarInner>
+          <img
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "contain",
+              position: "absolute",
+              top: "7px",
+            }}
+            src="/assets/images/me.JPG"
+            alt="Nighil Logo"
+          />
+        </StyledAvatarInner>
+      </StyledAvatar>
+      <NavDestop Scroll={Scroll} data={navConfig} desktop={desktop} />
+    </Stack>
   );
 };

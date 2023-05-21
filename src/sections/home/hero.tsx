@@ -14,7 +14,11 @@ type nameProps = {
 
 let _scroll = false;
 
-const skillframes: nameProps = [{ name: "react" }, { name: "next" }];
+const skillframes: nameProps = [
+  { name: "javascript" },
+  { name: "react" },
+  { name: "next" },
+];
 
 export const Hero: React.FC = () => {
   const [scope, animate] = useAnimate();
@@ -56,7 +60,7 @@ export const Hero: React.FC = () => {
     width: "60px",
     height: "60px",
     position: "absolute",
-    bottom: 0,
+    bottom: 16,
     left: "50%",
   }));
 
@@ -64,17 +68,27 @@ export const Hero: React.FC = () => {
     <Box
       id="Home"
       component={MotionViewport}
-      sx={{ minHeight: "90vh", display: "flex", alignItems: "center", position: "relative" }}
+      sx={{
+        minHeight: "90vh",
+        display: "flex",
+        alignItems: "center",
+        position: "relative",
+      }}
     >
       <Grid container>
         <Grid item md={4} display={"flex"} alignItems={"center"}>
           <Stack direction={"column"}>
             <m.div variants={varFade().inLeft}>
-              <Typography sx={{ fontSize: "25px", letterSpacing: "10px" }}>WELCOME TO MY WORLD</Typography>
+              <Typography sx={{ fontSize: "25px", letterSpacing: "10px" }}>
+                WELCOME TO MY WORLD
+              </Typography>
             </m.div>
             <m.div variants={varFade().inLeft}>
               <Box sx={{ display: "flex", flexDirection: "row", gap: 1 }}>
-                <Typography variant="h1" sx={{ fontSize: "50px", mb: 4, color: "text.secondary" }}>
+                <Typography
+                  variant="h1"
+                  sx={{ fontSize: "50px", mb: 4, color: "text.secondary" }}
+                >
                   Hi, I’m
                 </Typography>
                 <Typography variant="h1" sx={{ fontSize: "50px", mb: 4 }}>
@@ -83,16 +97,21 @@ export const Hero: React.FC = () => {
               </Box>
             </m.div>
             <m.div variants={varFade().inLeft}>
-              <Typography sx={{ fontSize: "25px", mb: 3 }}>I develop Web Application and User Interface</Typography>
+              <Typography sx={{ fontSize: "25px", mb: 3 }}>
+                I develop Web Application and User Interface
+              </Typography>
             </m.div>
             <m.div variants={varFade().inLeft}>
               <Typography sx={{ fontSize: "18px", maxWidth: "473px" }}>
-                I'm a skilled software developer with experience in TypeScript and JavaScript, and expertise in
-                frameworks like Reactjs and NextJs
+                I'm a skilled software developer with experience in TypeScript
+                and JavaScript, and expertise in frameworks like Reactjs and
+                NextJs
               </Typography>
             </m.div>
 
-            <Stack sx={{ display: "flex", flexDirection: "row", gap: 2, mt: 4 }}>
+            <Stack
+              sx={{ display: "flex", flexDirection: "row", gap: 2, mt: 4 }}
+            >
               {skillframes.map((el, ind) => (
                 <m.div key={ind} variants={varFade().inLeft}>
                   <Box
@@ -101,7 +120,10 @@ export const Hero: React.FC = () => {
                       height: "80px",
                       background: "#e6ebee",
                       borderRadius: "12px",
-                      boxShadow: " 5px 5px 15px #012625, -5px -5px 15px #012625",
+                      boxShadow:
+                        " 5px 5px 15px #012625, -5px -5px 15px #012625",
+                      overflow: "hidden",
+                      padding: "10px",
                     }}
                   >
                     <LottieLazyLoad url={`/lotties/${el.name}.json`} />
@@ -119,9 +141,18 @@ export const Hero: React.FC = () => {
                 animate={{
                   y: [0, 16],
                 }}
-                transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "easeInOut",
+                }}
               >
-                <img style={{ width: "100%", height: "100%" }} src="/assets/images/heromain.png" alt="heromain" />
+                <img
+                  style={{ width: "100%", height: "100%" }}
+                  src="/assets/images/heromain.png"
+                  alt="heromain"
+                />
               </m.div>
             </m.div>
             {/* gear-orange */}
@@ -132,7 +163,12 @@ export const Hero: React.FC = () => {
                   animate={{
                     y: [0, 25],
                   }}
-                  transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut",
+                  }}
                 >
                   <img
                     style={{ width: "200px", height: "200px", left: "145px" }}
@@ -151,9 +187,18 @@ export const Hero: React.FC = () => {
                   animate={{
                     y: [0, 40],
                   }}
-                  transition={{ duration: 4, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut",
+                  }}
                 >
-                  <img style={{ width: "200px", height: "200px" }} src="/assets/icons/tag.png" alt="tag" />
+                  <img
+                    style={{ width: "200px", height: "200px" }}
+                    src="/assets/icons/tag.png"
+                    alt="tag"
+                  />
                 </m.div>
               </m.div>
             </Box>
@@ -166,9 +211,18 @@ export const Hero: React.FC = () => {
                   animate={{
                     y: [25, 0],
                   }}
-                  transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                    ease: "easeInOut",
+                  }}
                 >
-                  <img style={{ width: "150px", height: "150px" }} src="/assets/icons/gear-blue.png" alt="gear-blue" />
+                  <img
+                    style={{ width: "150px", height: "150px" }}
+                    src="/assets/icons/gear-blue.png"
+                    alt="gear-blue"
+                  />
                 </m.div>
               </m.div>
             </Box>

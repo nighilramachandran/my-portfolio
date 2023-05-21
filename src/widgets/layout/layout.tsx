@@ -5,7 +5,7 @@ import { Header } from "./header";
 export const Layout: React.FC = () => {
   return (
     <Box>
-      {/* <Header /> */}
+      <Header />
       {/* <Container maxWidth={"xl"} component="main"> */}
       <Outlet />
       {/* </Container> */}

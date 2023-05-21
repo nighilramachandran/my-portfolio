@@ -9,7 +9,7 @@ interface contactMeData {
   title: string;
   icons: string;
   desc: string;
-  children?: { title: string; icon: string }[];
+  social?: { title: string; icon: string; link: string }[];
 }
 
 const contactMeDatas: contactMeData[] = [
@@ -28,10 +28,22 @@ const contactMeDatas: contactMeData[] = [
     title: "Social Profiles",
     desc: "",
     icons: "socialMedia",
-    children: [
-      { title: "LinkedIn", icon: "linkedin" },
-      { title: "facebook", icon: "facebook" },
-      { title: "Instagram", icon: "instagram" },
+    social: [
+      {
+        title: "LinkedIn",
+        icon: "linkedin",
+        link: "https://www.linkedin.com/in/nighil-ramachandran-6a2251176/",
+      },
+      {
+        title: "facebook",
+        icon: "facebook",
+        link: "https://www.facebook.com/nighil.ram.7",
+      },
+      {
+        title: "Instagram",
+        icon: "instagram",
+        link: "https://www.instagram.com/nig_hil/",
+      },
     ],
   },
 ];
@@ -98,7 +110,7 @@ export const Contact = () => {
                         <Stack
                           alignItems={"center"}
                           direction={"row"}
-                          spacing={2}
+                          spacing={1}
                         >
                           <Box
                             sx={{
@@ -118,10 +130,27 @@ export const Contact = () => {
                             />
                           </Box>
                           <Typography>{el.desc}</Typography>
-                          {el.children && (
+                          {el.social && (
                             <>
-                              {el.children.map((child) => (
-                                <>{child.title}</>
+                              {el.social.map((soc, ind) => (
+                                <Box
+                                  key={ind}
+                                  sx={{
+                                    width: "30px",
+                                    height: "30px",
+                                    borderRadius: "4px",
+                                    cursor: "pointer",
+                                  }}
+                                  onClick={() =>
+                                    window.open(soc.link, "_blank")
+                                  }
+                                >
+                                  <img
+                                    style={{ width: "30px", height: "30px" }}
+                                    src={`/assets/icons/${soc.icon}.svg`}
+                                    alt=""
+                                  />
+                                </Box>
                               ))}
                             </>
                           )}
@@ -136,12 +165,12 @@ export const Contact = () => {
               component={MotionViewport}
               sx={{ textAlign: { xs: "center" }, mb: 4 }}
             >
-              <m.div variants={varFade().inRight}>
+              <m.div variants={varFade().inUp}>
                 <Typography fontSize={"30px"}>
                   Thank you for taking the time to visit my portfolio.
                 </Typography>
               </m.div>
-              <m.div variants={varFade().inRight}>
+              <m.div variants={varFade().inUp}>
                 <Typography fontSize={"30px"}>
                   I look forward to hearing from you!
                 </Typography>

@@ -2,8 +2,6 @@ import { Box, Stack, Typography } from "@mui/material";
 import { m } from "framer-motion";
 import { varFade } from "../../component/animate/variants";
 import MotionViewport from "../../component/animate/MotionViewport";
-import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 type IntroProps = {
   heading: string;

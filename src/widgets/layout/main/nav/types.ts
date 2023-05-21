@@ -4,6 +4,7 @@ export type NavProps = {
   //   isOffset: boolean;
   data: NavItemProps[];
   Scroll: (val: string) => void;
+  desktop: boolean;
 };
 
 export type NavItemProps = {
