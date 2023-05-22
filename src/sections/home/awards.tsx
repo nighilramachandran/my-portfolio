@@ -3,8 +3,11 @@ import { Box, Stack, Typography } from "@mui/material";
 import { varFade } from "../../component/animate/variants";
 import { m } from "framer-motion";
 import MotionViewport from "../../component/animate/MotionViewport";
+import ReactPlayer from "react-player";
 
 export const Awards = () => {
+  const isiPhone = /iPhone/i.test(navigator.userAgent);
+
   return (
     <Stack
       id="Awrd"
@@ -25,18 +28,39 @@ export const Awards = () => {
           <Typography sx={{ fontSize: "50px" }}>Best BlockChain Project 2023</Typography>
         </m.div>
       </Stack>
-      <Box sx={{ width: "100%", maxWidth: "1200px", height: "100%" }}>
-        <video
-          src="/assets/media/Trophy_1_VP8.webm"
-          autoPlay
-          loop
-          playsInline
-          muted
-          preload="none"
-          width={"100%"}
-          height={"100%"}
-        />
-      </Box>
+      {isiPhone ? (
+        <Box>
+          <video src="/assets/media/Trophy_1_VP8.m4v" autoPlay loop playsInline muted preload="none" width={600} />
+        </Box>
+      ) : (
+        <Box sx={{ width: "100%", maxWidth: "1200px", height: "100%" }}>
+          <video
+            src="/assets/media/Trophy_1_VP8.webm"
+            autoPlay
+            loop
+            playsInline
+            muted
+            preload="none"
+            width={"100%"}
+            height={"100%"}
+          />
+        </Box>
+      )}
+      {/* {!isiPhone && (
+        <Box sx={{ width: "100%", maxWidth: "1200px", height: "100%" }}>
+          <video
+            src="/assets/media/Trophy_1_VP8.webm"
+            autoPlay
+            loop
+            playsInline
+            muted
+            preload="none"
+            width={"100%"}
+            height={"100%"}
+          />
+        </Box>
+      )} */}
+
       {/*    <Box>
        <video src="/assets/media/Trophy_1_VP8.m4v" autoPlay loop playsInline muted preload="none" width={600} /> 
       </Box>
