@@ -1,9 +1,7 @@
 import { Box, Stack, Typography } from "@mui/material";
-// import ReactPlayer from "react-player";
 import { varFade } from "../../component/animate/variants";
 import { m } from "framer-motion";
 import MotionViewport from "../../component/animate/MotionViewport";
-import ReactPlayer from "react-player";
 
 export const Awards = () => {
   const isiPhone = /iPhone/i.test(navigator.userAgent);
@@ -30,7 +28,7 @@ export const Awards = () => {
       </Stack>
       {isiPhone ? (
         <Box>
-          <video src="/assets/media/Trophy_1_VP8.m4v" autoPlay loop playsInline muted preload="none" width={600} />
+          <img style={{ width: "100%", height: "100%" }} src="/assets/images/golex-award.png" alt="gear-orange" />
         </Box>
       ) : (
         <Box sx={{ width: "100%", maxWidth: "1200px", height: "100%" }}>
@@ -46,26 +44,6 @@ export const Awards = () => {
           />
         </Box>
       )}
-      {/* {!isiPhone && (
-        <Box sx={{ width: "100%", maxWidth: "1200px", height: "100%" }}>
-          <video
-            src="/assets/media/Trophy_1_VP8.webm"
-            autoPlay
-            loop
-            playsInline
-            muted
-            preload="none"
-            width={"100%"}
-            height={"100%"}
-          />
-        </Box>
-      )} */}
-
-      {/*    <Box>
-       <video src="/assets/media/Trophy_1_VP8.m4v" autoPlay loop playsInline muted preload="none" width={600} /> 
-      </Box>
-      */}
-      {/* <ReactPlayer url="/assets/media/Trophy_1_VP8.webm" playing loop muted width={1200} /> */}
     </Stack>
   );
 };
