@@ -51,9 +51,7 @@ export const Header: React.FC = () => {
 
   //functions
   const ScrollFunction = (val: string) => {
-    {
-      !isDesktop && setOpenDrawer(false);
-    }
+    !isDesktop && setOpenDrawer(false);
     scroller.scrollTo(val, {
       duration: 800,
       delay: 0,
@@ -67,10 +65,7 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <AppBar
-      component={MotionViewport}
-      sx={{ position: "sticky", bgcolor: "background.header", borderRadius: 0 }}
-    >
+    <AppBar component={MotionViewport} sx={{ position: "sticky", bgcolor: "background.header", borderRadius: 0 }}>
       <Toolbar
         disableGutters
         sx={{
@@ -107,13 +102,7 @@ export const Header: React.FC = () => {
             </StyledAvatarInner>
           </StyledAvatar>
         )}
-        {isDesktop && (
-          <NavDestop
-            Scroll={(val: string) => ScrollFunction(val)}
-            data={navConfig}
-            desktop={isDesktop}
-          />
-        )}
+        {isDesktop && <NavDestop Scroll={(val: string) => ScrollFunction(val)} data={navConfig} desktop={isDesktop} />}
         {!isDesktop && (
           <IconButton onClick={toggleDrawer}>
             <MenuIcon sx={{ color: "text.primary" }} />
@@ -140,11 +129,7 @@ export const Header: React.FC = () => {
           onClose={toggleDrawer}
           sx={{ [`.${drawerClasses.paper}`]: { borderRadius: 0 } }}
         >
-          <DrawerContent
-            Scroll={(val: string) => ScrollFunction(val)}
-            data={navConfig}
-            desktop={isDesktop}
-          />
+          <DrawerContent Scroll={(val: string) => ScrollFunction(val)} data={navConfig} desktop={isDesktop} />
         </Drawer>
       </Toolbar>
     </AppBar>
@@ -153,12 +138,7 @@ export const Header: React.FC = () => {
 
 const DrawerContent: React.FC<NavProps> = ({ data, Scroll, desktop }) => {
   return (
-    <Stack
-      sx={{ width: 200, my: 1 }}
-      justifyContent={"center"}
-      alignItems={"center"}
-      spacing={3}
-    >
+    <Stack sx={{ width: 200, my: 1 }} justifyContent={"center"} alignItems={"center"} spacing={3}>
       <StyledAvatar>
         <StyledAvatarInner>
           <img
