@@ -32,7 +32,7 @@ const ProjectsData: ProjectProbs = [
   {
     name: "Golc LandingPage",
     img: "golclandingpage.png",
-    desc: "is a cryptocurrency landing page that showcases the features of buying and selling cryptocurrency with new experiance useing visualization tool",
+    desc: "Golc LandingPage is a cryptocurrency landing page that showcases the features of buying and selling cryptocurrency with new experiance useing visualization tool",
     lang: [{ lan: "#ReactJs" }, { lan: "#threeJs" }, { lan: "#webpack" }],
     link: "http://www.boss-accounting.com:8011/",
     button: "Live",
@@ -41,7 +41,7 @@ const ProjectsData: ProjectProbs = [
   {
     name: "Metagols LandingPage",
     img: "metagols.png",
-    desc: "Metagols is a platform to connect friends and family, it also futures in exchanging cryptos",
+    desc: "Metagols is a platform to connect friends and family, it also features in exchanging cryptos",
     lang: [{ lan: "#ReactJs" }, { lan: "#Bootstrap" }],
     link: "http://boss-accounting.com:8099/",
     button: "Live",
@@ -49,7 +49,7 @@ const ProjectsData: ProjectProbs = [
   {
     name: "FIZZ NFT",
     img: "fizz.png",
-    desc: "FIZZ NFT is a platform with wallet, discover, buy NTFs, sell your NFTs and earn money",
+    desc: "FIZZ NFT is a platform which lets you to connect with wallet, discover, buy NTFs, sell your NFTs and earn money",
     lang: [{ lan: "#ReactJs" }, { lan: "#Redux" }, { lan: "#Tailwind" }],
     link: "http://boss-accounting.com:8098/",
     button: "Live",
@@ -77,7 +77,7 @@ export const Projects = () => {
     <Stack id="Proj" component={MotionViewport}>
       <Stack textAlign="center" spacing={2} mb={5}>
         <m.div variants={varFade().inDown}>
-          <Typography sx={{ fontSize: "25px", letterSpacing: "10px" }}>Selection of my work</Typography>
+          <Typography sx={{ fontSize: "25px", letterSpacing: "10px" }}>Best of my work</Typography>
         </m.div>
         <m.div variants={varFade().inUp}>
           <Typography sx={{ fontSize: "50px" }}>Projects</Typography>
