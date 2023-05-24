@@ -1,6 +1,6 @@
 import { Box, Button, Grid, Paper, Stack, Typography } from "@mui/material";
 import { varFade } from "../../component/animate/variants";
-import { m } from "framer-motion";
+import { m, useMotionValue, transform } from "framer-motion";
 import MotionViewport from "../../component/animate/MotionViewport";
 
 type ProjectProbs = {
@@ -24,7 +24,7 @@ const ProjectsData: ProjectProbs = [
   {
     name: "GolCoin Stacking",
     img: "golstacking.png",
-    desc: "GolCoin Stacking is a platform for cryptocurrency stacking. GolCoin Stacking empowers individuals to participate in the staking economy and earn passive income from their digital assets. ",
+    desc: "GolCoin Stacking is a platform for cryptocurrency stacking. GolCoin Stacking empowers individuals to participate in the staking economy and earn passive income from their digital assets.",
     lang: [{ lan: "#ReactJs" }, { lan: "#Redux" }, { lan: "#Axios" }],
     link: "https://golstaking.io/",
     button: "Live",
@@ -32,7 +32,7 @@ const ProjectsData: ProjectProbs = [
   {
     name: "Golc LandingPage",
     img: "golclandingpage.png",
-    desc: "Golc LandingPage is a cryptocurrency landing page that showcases the features of buying and selling cryptocurrency with new experiance useing visualization tool",
+    desc: "Golc LandingPage is a cryptocurrency landing page that showcases the features of buying and selling cryptocurrency with new experiance useing visualization tool.",
     lang: [{ lan: "#ReactJs" }, { lan: "#threeJs" }, { lan: "#webpack" }],
     link: "http://www.boss-accounting.com:8011/",
     button: "Live",
@@ -41,7 +41,7 @@ const ProjectsData: ProjectProbs = [
   {
     name: "Metagols LandingPage",
     img: "metagols.png",
-    desc: "Metagols is a platform to connect friends and family, it also features in exchanging cryptos",
+    desc: "Metagols is a platform to connect friends and family, it also features in exchanging cryptos.",
     lang: [{ lan: "#ReactJs" }, { lan: "#Bootstrap" }],
     link: "http://boss-accounting.com:8099/",
     button: "Live",
@@ -49,7 +49,7 @@ const ProjectsData: ProjectProbs = [
   {
     name: "FIZZ NFT",
     img: "fizz.png",
-    desc: "FIZZ NFT is a platform which lets you to connect with wallet, discover, buy NTFs, sell your NFTs and earn money",
+    desc: "FIZZ NFT is a platform which lets you to connect with wallet, discover, buy NTFs, sell your NFTs and earn money.",
     lang: [{ lan: "#ReactJs" }, { lan: "#Redux" }, { lan: "#Tailwind" }],
     link: "http://boss-accounting.com:8098/",
     button: "Live",
@@ -87,33 +87,44 @@ export const Projects = () => {
       <Grid container spacing={2} justifyContent={"center"} alignItems={"center"} sx={{ mb: 5 }}>
         {ProjectsData.map((el, ind) => (
           <Grid key={ind} item lg={4} display={"flex"} alignItems={"center"} justifyContent={"center"} mb={5}>
-            <m.div variants={varFade().inUp}>
-              <Paper sx={{ maxWidth: "350px", width: "100%", height: "500px" }}>
+            <m.div variants={varFade().inUp} whileHover={{ scale: 1.02 }}>
+              <Paper
+                sx={{
+                  maxWidth: "350px",
+                  width: "100%",
+                  height: "500px",
+                  overflow: "hidden",
+                }}
+              >
                 <Stack justifyContent={"space-between"} height={"100%"}>
-                  <Box
-                    sx={{
-                      width: "100%",
-                      height: "200px",
-                      background: "#FFF",
-                      borderRadius: "16px",
-                      overflow: "hidden",
-                    }}
-                  >
-                    <img
-                      width={"100%"}
-                      height={"100%"}
-                      style={{ objectFit: "cover" }}
-                      src={`/assets/images/projects/${el.img}`}
-                      alt=""
-                    />
-                  </Box>
-                  <Stack spacing={2}>
+                  {/* image for the project */}
+                  <Stack gap={3}>
+                    <Box
+                      sx={{
+                        width: "100%",
+                        height: "200px",
+                        background: "#FFF",
+                        borderRadius: "16px",
+                        overflow: "hidden",
+                      }}
+                    >
+                      <img
+                        width={"100%"}
+                        height={"100%"}
+                        style={{ objectFit: "cover" }}
+                        src={`/assets/images/projects/${el.img}`}
+                        alt=""
+                      />
+                    </Box>
                     <Stack spacing={2}>
                       <Typography variant="h1" sx={{ fontSize: "20px" }}>
                         {el.name}
                       </Typography>
                       <Typography sx={{ fontSize: "15px" }}>{el.desc}</Typography>
                     </Stack>
+                  </Stack>
+
+                  <Stack spacing={2}>
                     <Stack direction={"column"} spacing={2}>
                       <Stack direction={"row"} spacing={1}>
                         {el.lang &&
