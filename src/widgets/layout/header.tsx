@@ -16,7 +16,7 @@ import IconButton from "@mui/material/IconButton";
 
 import "../../index.css";
 import { useState } from "react";
-import { NavItemProps, NavProps } from "./main/nav/types";
+import { NavProps } from "./main/nav/types";
 
 const StyledAvatar = styled(Box)(({ theme }: any) => ({
   width: "80px",
@@ -62,6 +62,17 @@ export const Header: React.FC = () => {
 
   const toggleDrawer = () => {
     setOpenDrawer(!openDrawer);
+  };
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = `/assets/pdf/NighilResume.pdf`;
+    link.download = "NighilResume.pdf";
+    link.target = "_blank";
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -118,6 +129,7 @@ export const Header: React.FC = () => {
               borderRadius: "10px",
             }}
             variant="contained"
+            onClick={handleDownload}
           >
             Download CV
           </Button>
