@@ -43,17 +43,25 @@ const ProjectsData: ProjectProbs = [
     img: "metagols.png",
     desc: "Metagols is a platform to connect friends and family, it also futures in exchanging cryptos",
     lang: [{ lan: "#ReactJs" }, { lan: "#Bootstrap" }],
-    link: "",
+    link: "http://boss-accounting.com:8099/",
     button: "Live",
   },
   {
-    name: "Arab Marketing Agency",
-    img: "arabmarketingagency.png",
-    desc: "Arab Marketing Agency is a online platform that provides up-to-date and comprehensive information on current events",
-    lang: [{ lan: "#ReactJs" }, { lan: "#Redux" }, { lan: "#Axios" }],
-    link: "",
-    button: "Maintenance",
+    name: "FIZZ NFT",
+    img: "fizz.png",
+    desc: "FIZZ NFT is a platform with wallet, discover, buy NTFs, sell your NFTs and earn money",
+    lang: [{ lan: "#ReactJs" }, { lan: "#Redux" }, { lan: "#Tailwind" }],
+    link: "http://boss-accounting.com:8098/",
+    button: "Live",
   },
+  // {
+  //   name: "Arab Marketing Agency",
+  //   img: "arabmarketingagency.png",
+  //   desc: "Arab Marketing Agency is a online platform that provides up-to-date and comprehensive information on current events",
+  //   lang: [{ lan: "#ReactJs" }, { lan: "#Redux" }, { lan: "#Axios" }],
+  //   link: "",
+  //   button: "Maintenance",
+  // },
   {
     name: "Gdex",
     img: "gdex.png",
@@ -69,32 +77,16 @@ export const Projects = () => {
     <Stack id="Proj" component={MotionViewport}>
       <Stack textAlign="center" spacing={2} mb={5}>
         <m.div variants={varFade().inDown}>
-          <Typography sx={{ fontSize: "25px", letterSpacing: "10px" }}>
-            Selection of my work
-          </Typography>
+          <Typography sx={{ fontSize: "25px", letterSpacing: "10px" }}>Selection of my work</Typography>
         </m.div>
         <m.div variants={varFade().inUp}>
           <Typography sx={{ fontSize: "50px" }}>Projects</Typography>
         </m.div>
       </Stack>
 
-      <Grid
-        container
-        spacing={2}
-        justifyContent={"center"}
-        alignItems={"center"}
-        sx={{ mb: 5 }}
-      >
+      <Grid container spacing={2} justifyContent={"center"} alignItems={"center"} sx={{ mb: 5 }}>
         {ProjectsData.map((el, ind) => (
-          <Grid
-            key={ind}
-            item
-            lg={4}
-            display={"flex"}
-            alignItems={"center"}
-            justifyContent={"center"}
-            mb={5}
-          >
+          <Grid key={ind} item lg={4} display={"flex"} alignItems={"center"} justifyContent={"center"} mb={5}>
             <m.div variants={varFade().inUp}>
               <Paper sx={{ maxWidth: "350px", width: "100%", height: "500px" }}>
                 <Stack justifyContent={"space-between"} height={"100%"}>
@@ -120,24 +112,13 @@ export const Projects = () => {
                       <Typography variant="h1" sx={{ fontSize: "20px" }}>
                         {el.name}
                       </Typography>
-                      <Typography sx={{ fontSize: "15px" }}>
-                        {el.desc}
-                      </Typography>
+                      <Typography sx={{ fontSize: "15px" }}>{el.desc}</Typography>
                     </Stack>
                     <Stack direction={"column"} spacing={2}>
                       <Stack direction={"row"} spacing={1}>
                         {el.lang &&
                           el.lang.map((lang, ind) => (
-                            <Typography
-                              key={ind}
-                              color={
-                                ind === 0
-                                  ? "#22d8dc"
-                                  : ind === 1
-                                  ? "#38ef7d"
-                                  : "#fc6767"
-                              }
-                            >
+                            <Typography key={ind} color={ind === 0 ? "#22d8dc" : ind === 1 ? "#38ef7d" : "#fc6767"}>
                               {lang.lan}
                             </Typography>
                           ))}
