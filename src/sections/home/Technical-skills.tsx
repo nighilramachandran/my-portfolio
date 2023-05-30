@@ -73,8 +73,8 @@ const Skills: SkillProps[] = [
     ],
   },
   {
-    heading: "Database",
-    children: [{ title: "PLSQL" }, { title: "SQL" }],
+    heading: "Backend & Database",
+    children: [{ title: "NODEJS" }, { title: "PlSql" }, { title: "sql" }],
   },
   {
     heading: "UI",
