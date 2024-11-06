@@ -1,5 +1,8 @@
 import { Box, Stack, Typography } from "@mui/material";
-import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { IndustrialDetails } from "../../utils/industries";
 import { CalculateTimeGap } from "../../component/calculate-time-gap/TimeGap";
@@ -21,7 +24,9 @@ export const Experience: React.FC = () => {
   return (
     <Stack id="Expe" component={MotionViewport} gap={10}>
       <m.div variants={varFade().inDown}>
-        <Typography sx={{ fontSize: "50px", textAlign: "center" }}>Work Experience</Typography>
+        <Typography sx={{ fontSize: "50px", textAlign: "center" }}>
+          Work Experience
+        </Typography>
       </m.div>
       <VerticalTimeline>
         {IndustrialDetails?.map((comp, ind) => (
@@ -30,7 +35,11 @@ export const Experience: React.FC = () => {
             className="vertical-timeline-element--work"
             contentStyle={{ background: "#43685D", color: "#fff" }}
             contentArrowStyle={{ borderRight: "7px solid  #43685D" }}
-            date={comp.company.includes("Silwana Infotech") ? (TimeGap(2021, 12) as unknown as string) : comp.time}
+            date={
+              comp.company.includes("Al Ansari Financial Services")
+                ? (TimeGap(2024, 2) as unknown as string)
+                : comp.time
+            }
             iconStyle={{ background: "#fc9915", overflow: "hidden" }}
             icon={
               <Box
@@ -42,12 +51,18 @@ export const Experience: React.FC = () => {
                   overflow: "hidden",
                 }}
               >
-                <img style={{ width: "100%", height: "100%" }} src={comp.icon} alt="company icons" />
+                <img
+                  style={{ width: "100%", height: "100%" }}
+                  src={comp.icon}
+                  alt="company icons"
+                />
               </Box>
             }
           >
             <h3 className="vertical-timeline-element-title">{comp.position}</h3>
-            <h4 className="vertical-timeline-element-subtitle">{comp.company}</h4>
+            <h4 className="vertical-timeline-element-subtitle">
+              {comp.company}
+            </h4>
             {comp.desc.map((el, ind) => (
               <p key={ind}>{el.detail}</p>
             ))}

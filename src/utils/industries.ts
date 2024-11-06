@@ -1,13 +1,25 @@
 export const IndustrialDetails = [
   {
-    company: "Silwana Infotech - Dubai",
-    icon: "/assets/icons/silwana.jpeg",
-    position: "Front end developer",
+    company: "Al Ansari Financial Services - Dubai",
+    icon: "/assets/icons/al_ansari_financial_services_logo.jpeg",
+    position: "Senior Front end developer",
     time: "Dec 2021 - present",
     desc: [
       {
         detail:
-          "Developing and maintaing web applications and responsive design and ensuring cross-browser compatibility using React.js and Next.js",
+          "Developed a secure web application using Next.js for a remittance fintech platform, ensuring encrypted data transmission and compliance with financial regulations for safe and efficient money transfers",
+      },
+    ],
+  },
+  {
+    company: "Silwana Infotech - Dubai",
+    icon: "/assets/icons/silwana.jpeg",
+    position: "Senior Front end developer",
+    time: "May 2021 - Dec 2023 · 2 yrs 8 mon",
+    desc: [
+      {
+        detail:
+          "Developed multiple fintech projects, including trading and staking platforms, utilizing Next.js and React to deliver high-performance, user-friendly applications.",
       },
     ],
   },
@@ -18,7 +30,8 @@ export const IndustrialDetails = [
     time: "Dec 2018 - Nov 2020 · 2 yrs",
     desc: [
       {
-        detail: "Developing and maintaing web based CAFM Application using Angular with JavaScript",
+        detail:
+          "Developing and maintaing web based CAFM Application using Angular with JavaScript",
       },
     ],
   },
@@ -29,7 +42,8 @@ export const IndustrialDetails = [
     time: "Feb 2017 - Oct 2018 · 1 yr 9 mon",
     desc: [
       {
-        detail: "Developing user interface for Govermental Services Applications using Java",
+        detail:
+          "Developing user interface for Govermental Services Applications using Java",
       },
     ],
   },
