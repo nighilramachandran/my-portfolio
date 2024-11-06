@@ -52,7 +52,7 @@ const Skills: SkillProps[] = [
     heading: "DIGITAL SKILLS",
     children: [
       { title: "GIT" },
-      { title: "Doker" },
+      { title: "DOCKER" },
       { title: "POSTMAN" },
       { title: "ClickUp" },
       { title: "Jira" },
@@ -96,7 +96,11 @@ const Skills: SkillProps[] = [
   },
   {
     heading: "Familiar With",
-    children: [{ title: "FIGMA" }, { title: "AdobeXd Photoshop & Illustrator" }, { title: "BLENDER" }],
+    children: [
+      { title: "FIGMA" },
+      { title: "AdobeXd Photoshop & Illustrator" },
+      { title: "BLENDER" },
+    ],
   },
 ];
 
@@ -105,7 +109,9 @@ export const TechnicalSkills = () => {
     <>
       <Stack id="Skills" component={MotionViewport}>
         <m.div variants={varFade().inDown}>
-          <Typography sx={{ fontSize: "50px", textAlign: "center", mb: 5 }}>Skills</Typography>
+          <Typography sx={{ fontSize: "50px", textAlign: "center", mb: 5 }}>
+            Skills
+          </Typography>
         </m.div>
 
         <Stack spacing={3}>
@@ -123,7 +129,11 @@ export const TechnicalSkills = () => {
                       <Grid item>
                         <Typography
                           fontSize={"23px"}
-                          color={child.title === child.title.toUpperCase() ? "primary.main" : "text.primary"}
+                          color={
+                            child.title === child.title.toUpperCase()
+                              ? "primary.main"
+                              : "text.primary"
+                          }
                         >
                           {child.title}
                         </Typography>

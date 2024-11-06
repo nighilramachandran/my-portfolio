@@ -14,6 +14,14 @@ type ProjectProbs = {
 
 const ProjectsData: ProjectProbs = [
   {
+    name: "Fintech - Hosted Modal",
+    img: "hosted-modal.png",
+    desc: "The hosted modal project is a secure B2B solution enabling safe fund transfers to approved countries. With strong encryption and compliance with financial regulations, it offers businesses an intuitive, reliable interface for cross-border payments.",
+    lang: [{ lan: "#NextJs" }, { lan: "#Docker" }, { lan: "#R-Suite" }],
+    link: "https://golex.io/",
+    button: "Corporate Confidential",
+  },
+  {
     name: "Golex.io",
     img: "golex.webp",
     desc: "Golex.io provides secure, trusted digital asset trading and asset management services, the highest quality investment opportunities, and the most rewarding trading experience.",
@@ -54,14 +62,14 @@ const ProjectsData: ProjectProbs = [
     link: "http://boss-accounting.com:8098/",
     button: "Live",
   },
-  // {
-  //   name: "Arab Marketing Agency",
-  //   img: "arabmarketingagency.png",
-  //   desc: "Arab Marketing Agency is a online platform that provides up-to-date and comprehensive information on current events",
-  //   lang: [{ lan: "#ReactJs" }, { lan: "#Redux" }, { lan: "#Axios" }],
-  //   link: "",
-  //   button: "Maintenance",
-  // },
+  {
+    name: "Arab Marketing Agency",
+    img: "arabmarketingagency.png",
+    desc: "Arab Marketing Agency is a online platform that provides up-to-date and comprehensive information on current events",
+    lang: [{ lan: "#ReactJs" }, { lan: "#Redux" }, { lan: "#Axios" }],
+    link: "",
+    button: "Maintenance",
+  },
   {
     name: "Gdex",
     img: "gdex.png",
@@ -120,7 +128,7 @@ export const Projects = () => {
                         width: "100%",
                         height: "200px",
                         background: "#FFF",
-                        borderRadius: "16px",
+                        borderRadius: "12px",
                         overflow: "hidden",
                       }}
                     >

@@ -60,7 +60,10 @@ export const Experience: React.FC = () => {
             }
           >
             <h3 className="vertical-timeline-element-title">{comp.position}</h3>
-            <h4 className="vertical-timeline-element-subtitle">
+            <h4
+              className="vertical-timeline-element-subtitle"
+              style={{ color: "#fc9915" }}
+            >
               {comp.company}
             </h4>
             {comp.desc.map((el, ind) => (
