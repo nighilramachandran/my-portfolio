@@ -12,6 +12,7 @@ const Skills: SkillProps[] = [
   {
     heading: "ReactJs & NextJs",
     children: [
+      { title: "MICRO SERVICES" },
       { title: "HOOKS" },
       { title: "react-router" },
       { title: "FORMIK" },
@@ -74,7 +75,12 @@ const Skills: SkillProps[] = [
   },
   {
     heading: "Backend & Database",
-    children: [{ title: "NODEJS" }, { title: "PlSql" }, { title: "sql" }],
+    children: [
+      { title: "NODEJS" },
+      { title: "PlSql" },
+      { title: "sql" },
+      { title: "MONGO DB" },
+    ],
   },
   {
     heading: "UI",
@@ -88,11 +94,12 @@ const Skills: SkillProps[] = [
       { title: "BOOTSTRAP" },
       { title: "Ajax" },
       { title: "JQuery" },
+      { title: "Radix" },
     ],
   },
   {
     heading: "Testing",
-    children: [{ title: "SELENIUM" }, { title: "Junits" }],
+    children: [{ title: "JEST" }, { title: "SELENIUM" }, { title: "Junits" }],
   },
   {
     heading: "Familiar With",
