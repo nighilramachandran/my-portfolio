@@ -49,17 +49,17 @@ const contactMeDatas: contactMeData[] = [
 ];
 
 export const Contact = () => {
-  const Icons = ({ icon, title }: any) => {
-    return (
-      <Stack flexDirection={"row"} alignItems={"center"} gap={1}>
-        <Box sx={{ width: "30px", height: "30px" }}>
-          <img src={`/assets/icons/${icon}.svg`} alt="" />
-        </Box>
+  // const Icons = ({ icon, title }: any) => {
+  //   return (
+  //     <Stack flexDirection={"row"} alignItems={"center"} gap={1}>
+  //       <Box sx={{ width: "30px", height: "30px" }}>
+  //         <img src={`/assets/icons/${icon}.svg`} alt="" />
+  //       </Box>
 
-        <Typography>{title}</Typography>
-      </Stack>
-    );
-  };
+  //       <Typography>{title}</Typography>
+  //     </Stack>
+  //   );
+  // };
 
   return (
     <Stack id="Cont" component={MotionViewport}>

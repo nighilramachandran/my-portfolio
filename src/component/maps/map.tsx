@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Box, Paper } from "@mui/material";
+import { Box } from "@mui/material";
 import GoogleMapReact from "google-map-react";
 import { Marker } from "./marker";
 export const MapComponents = () => {

@@ -46,7 +46,12 @@ export const Home: React.FC = () => {
           height="80"
           width="80"
           ariaLabel="dna-loading"
-          wrapperStyle={{ position: "fixed", left: "50%", top: "50%", zIndex: "9999" }}
+          wrapperStyle={{
+            position: "fixed",
+            left: "50%",
+            top: "50%",
+            zIndex: "9999",
+          }}
           wrapperClass="dna-wrapper"
         />
       )}

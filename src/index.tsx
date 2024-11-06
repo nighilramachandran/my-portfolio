@@ -2,14 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import { PrivateRoutes } from "./Routes";
-import { ThemeProvider, CssBaseline, createTheme, Box } from "@mui/material";
+import { ThemeProvider, CssBaseline, createTheme } from "@mui/material";
 import darkThemeOptions from "./styles/theme/DarkTheme";
 import MotionLazyContainer from "./component/animate/MotionLazyContainer";
 import "./index.css";
 
 const darkTheme = createTheme(darkThemeOptions);
 
-const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={darkTheme}>

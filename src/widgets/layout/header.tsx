@@ -7,7 +7,6 @@ import { HEADER } from "../../utils/config";
 import useResponsive from "../../hooks/useResponsive";
 import styled from "@emotion/styled";
 import MenuIcon from "@mui/icons-material/Menu";
-import { m } from "framer-motion";
 
 import MotionViewport from "../../component/animate/MotionViewport";
 import { scroller } from "react-scroll";
