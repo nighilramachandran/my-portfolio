@@ -15,7 +15,12 @@ type nameProps = {
 
 let _scroll = false;
 
-const skillframes: nameProps = [{ name: "javascript" }, { name: "react" }, { name: "next" }];
+const skillframes: nameProps = [
+  { name: "javascript" },
+  { name: "react" },
+  { name: "next" },
+  { name: "docker" },
+];
 
 export const Hero: React.FC = () => {
   const [scope, animate] = useAnimate();
@@ -77,11 +82,16 @@ export const Hero: React.FC = () => {
         <Grid item md={4} display={"flex"} alignItems={"center"}>
           <Stack direction={"column"}>
             <m.div variants={varFade().inLeft}>
-              <Typography sx={{ fontSize: "25px", letterSpacing: "10px" }}>WELCOME TO MY WORLD</Typography>
+              <Typography sx={{ fontSize: "25px", letterSpacing: "10px" }}>
+                WELCOME TO MY WORLD
+              </Typography>
             </m.div>
             <m.div variants={varFade().inLeft}>
               <Box sx={{ display: "flex", flexDirection: "row", gap: 1 }}>
-                <Typography variant="h1" sx={{ fontSize: "50px", mb: 4, color: "text.secondary" }}>
+                <Typography
+                  variant="h1"
+                  sx={{ fontSize: "50px", mb: 4, color: "text.secondary" }}
+                >
                   Hi, I’m
                 </Typography>
                 <Typography variant="h1" sx={{ fontSize: "50px", mb: 4 }}>
@@ -90,16 +100,21 @@ export const Hero: React.FC = () => {
               </Box>
             </m.div>
             <m.div variants={varFade().inLeft}>
-              <Typography sx={{ fontSize: "25px", mb: 3 }}>I develop Web Application and User Interface</Typography>
+              <Typography sx={{ fontSize: "25px", mb: 3 }}>
+                I develop Web Application and User Interface
+              </Typography>
             </m.div>
             <m.div variants={varFade().inLeft}>
               <Typography sx={{ fontSize: "18px", maxWidth: "473px" }}>
-                I'm a skilled software developer with experience in TypeScript and JavaScript, and expertise in
-                frameworks like Reactjs and NextJs
+                I'm a skilled software developer with experience in TypeScript
+                and JavaScript, and expertise in frameworks like Reactjs and
+                NextJs
               </Typography>
             </m.div>
 
-            <Stack sx={{ display: "flex", flexDirection: "row", gap: 2, mt: 4 }}>
+            <Stack
+              sx={{ display: "flex", flexDirection: "row", gap: 2, mt: 4 }}
+            >
               {skillframes.map((el, ind) => (
                 <m.div key={ind} variants={varFade().inLeft}>
                   <Box
@@ -108,7 +123,8 @@ export const Hero: React.FC = () => {
                       height: "80px",
                       background: "#e6ebee",
                       borderRadius: "12px",
-                      boxShadow: " 5px 5px 15px #012625, -5px -5px 15px #012625",
+                      boxShadow:
+                        " 5px 5px 15px #012625, -5px -5px 15px #012625",
                       overflow: "hidden",
                       padding: "10px",
                     }}
@@ -136,7 +152,11 @@ export const Hero: React.FC = () => {
                     ease: "easeInOut",
                   }}
                 >
-                  <img style={{ width: "100%", height: "100%" }} src="/assets/images/heromain.png" alt="heromain" />
+                  <img
+                    style={{ width: "100%", height: "100%" }}
+                    src="/assets/images/heromain.png"
+                    alt="heromain"
+                  />
                 </m.div>
               </m.div>
               {/* gear-orange */}
@@ -178,7 +198,11 @@ export const Hero: React.FC = () => {
                       ease: "easeInOut",
                     }}
                   >
-                    <img style={{ width: "200px", height: "200px" }} src="/assets/icons/tag.png" alt="tag" />
+                    <img
+                      style={{ width: "200px", height: "200px" }}
+                      src="/assets/icons/tag.png"
+                      alt="tag"
+                    />
                   </m.div>
                 </m.div>
               </Box>
