@@ -14,6 +14,19 @@ type ProjectProbs = {
 
 const ProjectsData: ProjectProbs = [
   {
+    name: "Netflix Clone",
+    img: "netflix.PNG",
+    desc: "A Netflix-inspired app for searching and watching movies, powered by OpenAI for smart search and Firebase for real-time data and authentication.",
+    lang: [
+      { lan: "#ReactJS" },
+      { lan: "#Typescript" },
+      { lan: "#Open AI" },
+      { lan: "#Firebase" },
+    ],
+    link: "https://n-clone-lilac.vercel.app/",
+    button: "Live",
+  },
+  {
     name: "Fintech - Hosted Modal",
     img: "hosted-modal.png",
     desc: "The hosted modal project is a secure B2B solution enabling safe fund transfers to approved countries. With strong encryption and compliance with financial regulations, it offers businesses an intuitive, reliable interface for cross-border payments.",
@@ -111,7 +124,13 @@ export const Projects = () => {
             justifyContent={"center"}
             mb={5}
           >
-            <m.div variants={varFade().inUp} whileHover={{ scale: 1.02 }}>
+            <m.div
+              variants={varFade().inUp}
+              whileHover={{
+                scale: 1.02,
+                transition: { duration: 0.3, easings: ["easeIn", "easeOut"] },
+              }}
+            >
               <Paper
                 sx={{
                   maxWidth: "350px",

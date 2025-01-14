@@ -26,38 +26,37 @@ export const Hero: React.FC = () => {
   const [scope, animate] = useAnimate();
   const isDesktop = useResponsive("up", "md");
 
-  const handleScroll = () => {
-    if (window.scrollY > 250) {
-      _scroll = true;
-    } else if (window.scrollY < 10) {
-      _scroll = false;
-    }
-
-    if (_scroll === true) {
-      animate(
-        scope.current,
-        { opacity: 0, y: -100 },
-        {
-          duration: 2,
-        }
-      );
-    }
-
-    if (_scroll === false) {
-      animate(
-        scope.current,
-        { opacity: 1, y: 0 },
-        {
-          duration: 2,
-        }
-      );
-    }
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 250) {
+        _scroll = true;
+      } else if (window.scrollY < 10) {
+        _scroll = false;
+      }
+
+      if (_scroll === true) {
+        animate(
+          scope.current,
+          { opacity: 0, y: -100 },
+          {
+            duration: 2,
+          }
+        );
+      }
+
+      if (_scroll === false) {
+        animate(
+          scope.current,
+          { opacity: 1, y: 0 },
+          {
+            duration: 2,
+          }
+        );
+      }
+    };
     window.addEventListener("scroll", handleScroll);
     animate(scope.current, { opacity: 1, y: [-100, 0] }, { duration: 2 });
-  }, []);
+  }, [scope, animate]);
 
   const StyledMouse = styled(Box)(({ theme }: any) => ({
     width: "60px",
